@@ -36,7 +36,7 @@ CREATE TABLE `contact` (
   `message` varchar(1000) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `contact`
@@ -59,7 +59,7 @@ CREATE TABLE `credits` (
   `available_credit` int NOT NULL DEFAULT '5',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `credits`
@@ -76,7 +76,7 @@ INSERT INTO `credits` (`id`, `user_id`, `max_credit`, `available_credit`, `creat
 
 CREATE TABLE `documents` (
   `id` varchar(100) NOT NULL,
-  `user_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `user_id` varchar(100) CHARACTER SET utf8mb4  NOT NULL,
   `image_url` varchar(500) DEFAULT NULL,
   `file_size` varchar(50) DEFAULT NULL,
   `file_type` varchar(50) DEFAULT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `documents` (
   `ocr_text` text,
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `is_archive` int NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `documents`
@@ -137,7 +137,7 @@ CREATE TABLE `feedback` (
   `rating` int NOT NULL,
   `comment` text,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `feedback`
@@ -159,14 +159,14 @@ INSERT INTO `feedback` (`id`, `user_id`, `rating`, `comment`, `created_at`) VALU
 
 CREATE TABLE `pricing` (
   `id` int NOT NULL,
-  `plan_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `plan_name` varchar(255) CHARACTER SET utf8mb4  NOT NULL,
   `description` text,
   `price` decimal(10,2) NOT NULL,
   `maxUploads` int NOT NULL,
   `export_excel` int NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `pricing`
@@ -188,7 +188,7 @@ CREATE TABLE `subscribers` (
   `email` int NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -200,7 +200,7 @@ CREATE TABLE `test` (
   `id` int NOT NULL,
   `name` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `test`
@@ -222,9 +222,9 @@ INSERT INTO `test` (`id`, `name`, `email`) VALUES
 CREATE TABLE `users` (
   `id` varchar(50) NOT NULL,
   `name` varchar(500) NOT NULL,
-  `lastname` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `lastname` varchar(500) CHARACTER SET utf8mb4  DEFAULT NULL,
   `username` varchar(500) NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4  NOT NULL,
   `password` varchar(500) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -234,7 +234,7 @@ CREATE TABLE `users` (
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `ref_code` varchar(50) NOT NULL,
   `country` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `users`
