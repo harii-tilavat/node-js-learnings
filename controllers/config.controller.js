@@ -71,7 +71,7 @@ class ConfigController {
                 try {
                     const { username, password } = req.body;
                     if (!username || !password) {
-                        throw MissingParamException('Username or password missing !!');
+                        throw new MissingParamException('Username or password missing !!');
                     }
                     const configBiz = new ConfigBiz();
                     const user = await configBiz.loginUser(username, password);

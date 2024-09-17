@@ -110,7 +110,6 @@ class ConfigRepo {
         return new Promise(async (resolve, reject) => {
             try {
                 const query = 'INSERT INTO otps (user_id, otp, email, expires_at) VALUES (?, ?, ?, ?)';
-                debugger;
                 await mysql.execute(query, [user_id, otp, email, expirationTime]);
                 resolve(true);
             } catch (error) {
